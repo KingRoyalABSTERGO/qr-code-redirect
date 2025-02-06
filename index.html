@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Device Detection</title>
+  <script>
+    function detectDevice() {
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        window.location.href = "https://apps.apple.com/app/id123456789"; // Replace with App Store link
+      } else if (/android/i.test(userAgent)) {
+        window.location.href = "https://play.google.com/store/apps/details?id=google"; // Replace with Play Store link
+      } else {
+        window.location.href = "https://yourwebsite.com"; // Fallback URL
+      }
+    }
+    window.onload = detectDevice;
+  </script>
+</head>
+<body>
+  <p>Redirecting...</p>
+</body>
+</html>
